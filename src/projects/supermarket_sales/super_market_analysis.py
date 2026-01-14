@@ -10,12 +10,18 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import os
 
-DATA_PATH = os.path.join("..", "..", "data", "external", "supermarket_sales.csv")
+try:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # .py
+except NameError:
+    BASE_DIR = os.getcwd()  # fallback (segurança)
+
+DATA_PATH = os.path.abspath(
+    os.path.join(BASE_DIR, "..", "..", "data", "external", "supermarket_sales.csv")
+)
 
 sales = pd.read_csv(DATA_PATH)
 
 sales.head()
-
 sales.info()
 
 """Por inspeção, o tipo de dados 'Date' é um objeto, precisamos convertê-lo para datetime

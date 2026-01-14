@@ -1,0 +1,9 @@
+services:
+  jupyter:
+    build: .
+    container_name: python-workspace
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./src:/app/src
+    working_dir: /app/src/projects/supermarket_sales
