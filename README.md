@@ -54,19 +54,25 @@ src/
 
 💡 Obs: Não é necessário instalar Python ou bibliotecas localmente.
 
-### ▶️ Subindo o ambiente
+### ▶️ Como subir o ambiente
 
-Na raiz do projeto, execute:
+1. Na raiz do projeto, execute o comando abaixo para construir e iniciar o ambiente (apenas na primeira vez ou se houver alterações no Dockerfile):
 
 ```bash
 docker compose up --build
 ```
 
-Após o build, o JupyterLab estará disponível em:
+Nas próximas execuções, basta rodar:
+
+```bash
+docker compose up
+```
+
+2. Aguarde o build e a inicialização dos containers. O JupyterLab estará disponível em:
 
 http://localhost:8888
 
-O token de acesso será exibido no terminal.
+3. O token de acesso será exibido no terminal. Copie e cole no navegador para acessar o JupyterLab.
 
 ### 🧪 Desenvolvimento
 
